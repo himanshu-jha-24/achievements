@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Resources</title>
+</head>
+<body>
+    <div class='container'>
+        <h1 class="mb-4">Resources Database</h1>
+        <a href='/' class="btn btn-primary">Back to main database</a>
+        <a href='resources/add' class="btn btn-success">Add Resource</a>
+        <% members.forEach(member=>{ %>
+            <div class="card mt-4">
+                <%= member.name %><br>
+                <%= member.drive_link %>,
+                <%= member.youtube_link %><br>
+                <%= member.id %>
+            </div>
+            <form action='/resources/<%= member.id %>?_method=DELETE' method="POST">
+                <button type="submit" class="btn btn-danger">DELETE</button>
+            </form>
+            <a href='resources/edit/<%= member.id %>' class="btn btn-primary">EDIT</a>
+        <% }) %>
+    </div>
+</body>
+</html>

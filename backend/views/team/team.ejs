@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Teams</title>
+</head>
+<body>
+    <div class='container'>
+        <h1 class="mb-4">Team Members</h1>
+        <a href='/' class="btn btn-primary">Back to main database</a>
+        <a href='team/add' class="btn btn-success">Add Member</a>
+        <% members.forEach(member=>{ %>
+            <div class="card mt-4">
+                <img src=<%= member.photo %> style="width: 200px; max-width: 100%; height: auto">
+                <%= member.name %><br>
+                <%= member.degree %>,
+                <%= member.dept %>'<%= member.year %><br>
+                <%= member.profession %><br>
+                <%= member.por %><br>
+                <%= member.id %>
+            </div>
+            <form action='/team/<%= member.id %>?_method=DELETE' method="POST">
+                <button type="submit" class="btn btn-danger">DELETE</button>
+            </form>
+            <a href='team/edit/<%= member.id %>' class="btn btn-primary">EDIT</a>
+        <% }) %>
+    </div>
+</body>
+</html>
