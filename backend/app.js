@@ -34,7 +34,7 @@ const User = require('./models/user');
 
 //MongoDB server link
 const MONGODB_URI =
-'mongodb+srv://Rohan:rKtwQqBaM2mqX0oh@cluster0.qgpkw.mongodb.net/project';
+'mongodb+srv://amcadmin:jgxP1d9B0PkcCjv1@cluster0.g6l0k.mongodb.net/amcDB';
 
 const app = express();
 
@@ -130,7 +130,7 @@ app.use(errorController.get404);
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
   .then(result => {
-   //console.log('Connected!');
+   console.log('Connected!');
     // app.listen(3000);
   })
   .catch(err => {

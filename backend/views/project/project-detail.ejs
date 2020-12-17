@@ -5,6 +5,9 @@
         <%- include('../includes/navigation.ejs') %>
         <main class="centered">
             <h1><%= project.title %></h1>
+            <h1 >
+                ( <%= project.type %> )
+            </h1>
             <hr>
             <div>
                 <img src="<%= project.imageUrl %>" alt="<%= project.title %>">

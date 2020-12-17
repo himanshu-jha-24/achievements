@@ -15,6 +15,10 @@ const projectSchema = new Schema({
     type: String,  //data type
     required: true 
   },
+  type: {
+    type: String, //data type
+    required: true
+  },
   imageUrl: {
     type: String,
     required: true 
