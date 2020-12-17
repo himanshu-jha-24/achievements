@@ -7,18 +7,20 @@ router.get('/',async function(req,res,next){
     const members = await Team.find().sort({
         year:'asc'
     });
-    res.render('team/team',{members:members});
+    res.render('team/team',{members:members,
+    csrfToken: req.csrfToken()});
 })
 
 router.get('/add',function(req,res,next){
-    res.render('team/add',{team:new Team()});
+    res.render('team/add',{team:new Team(),
+        csrfToken: req.csrfToken()});
 })
 
 
 router.post('/', async function(req,res,next){
     req.team = new Team();
     next();
-}, SaveAndRedirect('team','team/add'))
+}, SaveAndRedirect('/team','team/add'))
 
 router.put('/:id',async function(req,res,next){
     req.team = await Team.findById(req.params.id);
@@ -26,13 +28,17 @@ router.put('/:id',async function(req,res,next){
 },SaveAndRedirect('/team','team/edit'))
 
 router.delete('/:id',async function(req,res,next){
-    await Team.findByIdAndDelete(req.params.id);
+    await Team.findByIdAndRemove(req.params.id);
     res.redirect('/team');
 })
 
+
+  
+
 router.get('/edit/:id',async function(req,res,next){
     const team = await Team.findById(req.params.id);
-    res.render('team/edit',{team:team});
+    res.render('team/edit',{team:team,
+        csrfToken: req.csrfToken()});
 })
 
 function SaveAndRedirect(path1,path){
@@ -54,7 +60,8 @@ function SaveAndRedirect(path1,path){
         res.redirect(path1);
     } catch(err){
         console.log(err);
-        res.render('${path}',{team:team});
+        res.render(`${path}`,{team:team,
+            csrfToken: req.csrfToken()});
         }
     }
 }

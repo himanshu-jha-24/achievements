@@ -9,6 +9,7 @@
 <body>
     <div class='container'>
         <h1 class="mb-4">Edit Resource</h1>
+        <p>Fields marked with * are required</p>
         <form action="/resources/<%= resource.id %>?_method=PUT" method="POST">
             <%- include('_form_fields') %> 
         </form>

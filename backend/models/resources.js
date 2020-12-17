@@ -7,7 +7,7 @@ const resourcesSchema= new mongoose.Schema({
     },
     drive_link:{
         type: String,
-        required: true
+        required: false
     },
     youtube_link:{
         type: String,

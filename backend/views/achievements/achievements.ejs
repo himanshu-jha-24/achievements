@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Team</title>
+    <link rel = "icon" href = "/img/imageedit_5_6041780000.png" 
+        type = "image/x-icon">
+</head>
+<body>
+    <div class='container'>
+        <h1 class="mb-4">Achievements</h1>
+        <a href='/' class="btn btn-primary">Back to main database</a>
+        <a href='achievements/add' class="btn btn-success">Add Achievement</a>
+        <% members.forEach(member=>{ %>
+            <div class="card mt-4">
+                <%= member.name %><br>
+                <%= member.month %><br>
+                <%= member.year %><br>
+                <%= member.description %><br>
+                <%= member.month_number %><br>
+                <%= member.id %>
+            </div>
+            <!-- <input type="hidden" name="_csrf" value="<%= csrfToken %>"> -->
+            <form action='/achievements/<%= member._id %>?_method=DELETE' method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="btn btn-danger">DELETE</button>
+            </form>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <a href='achievements/edit/<%= member.id %>' class="btn btn-primary">EDIT</a>
+        <% }) %>
+    </div>
+</body>
+</html>

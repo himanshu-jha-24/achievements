@@ -9,7 +9,9 @@
 <body>
     <div class='container'>
         <h1 class="mb-4">New Alumni</h1>
+        <p>Fields marked with * are required</p>
         <form action="/alum" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <%- include('_form_fields') %> 
         </form>
     </div>

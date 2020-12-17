@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Events</title>
+    <link rel = "icon" href = "/img/imageedit_5_6041780000.png" 
+        type = "image/x-icon">
+</head>
+<body>
+    <div class='container'>
+        <h1 class="mb-4">Events</h1>
+        <p>It is advised to keep atmost 10 events in the database</p>
+        <a href='/' class="btn btn-primary">Back to main database</a>
+        <a href='events/add' class="btn btn-success">Add Event</a>
+        <% members.forEach(member=>{ %>
+            <div class="card mt-4">
+                <%= member.name %><br>
+                <%= member.time %> hrs,<%= member.date %>/<%= member.month %>/<%= member.year %><br>
+                <%= member.day %><br>
+                <%= member.venue %>
+                <%= member.id %>
+            </div>
+            <!-- <input type="hidden" name="_csrf" value="<%= csrfToken %>"> -->
+            <form action='/events/<%= member._id %>?_method=DELETE' method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="btn btn-danger">DELETE</button>
+            </form>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <a href='events/edit/<%= member.id %>' class="btn btn-primary">EDIT</a>
+        <% }) %>
+    </div>
+</body>
+</html>

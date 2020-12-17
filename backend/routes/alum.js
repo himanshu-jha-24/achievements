@@ -7,11 +7,13 @@ router.get('/',async function(req,res,next){
     const members = await Alum.find().sort({
         year:'asc'
     });
-    res.render('alum/alum',{members:members});
+    res.render('alum/alum',{members:members,
+        csrfToken: req.csrfToken()  });
 })
 
 router.get('/add',function(req,res,next){
-    res.render('alum/add',{team:new Alum()});
+    res.render('alum/add',{team:new Alum(),
+        csrfToken: req.csrfToken()});
 })
 
 
@@ -33,7 +35,8 @@ router.delete('/:id',async function(req,res,next){
 
 router.get('/edit/:id',async function(req,res,next){
     const team = await Alum.findById(req.params.id);
-    res.render('alum/edit',{team:team});
+    res.render('alum/edit',{team:team,
+        csrfToken: req.csrfToken()});
 })
 
 function SaveAndRedirect(path1,path){
@@ -55,7 +58,8 @@ function SaveAndRedirect(path1,path){
         res.redirect(path1);
     } catch(err){
         console.log(err);
-        res.render('${path}',{team:team});
+        res.render(`${path}`,{team:team,
+            csrfToken: req.csrfToken()});
         }
     }
 }

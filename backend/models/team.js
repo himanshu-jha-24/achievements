@@ -23,7 +23,7 @@ const teamSchema = new mongoose.Schema({
     },
     profession:{
         type:String,
-        required:true
+        required:false
     },
     photo:{
         type:String,

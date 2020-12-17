@@ -7,11 +7,13 @@ router.get('/',async function(req,res,next){
     const members = await Resources.find().sort({
         date:'desc'
     });
-    res.render('resources/resources',{members:members});
+    res.render('resources/resources',{members:members,
+        csrfToken: req.csrfToken()});
 })
 
 router.get('/add',function(req,res,next){
-    res.render('resources/add',{resource:new Resources()});
+    res.render('resources/add',{resource:new Resources(),
+        csrfToken: req.csrfToken()});
 })
 
 
@@ -32,7 +34,8 @@ router.delete('/:id',async function(req,res,next){
 
 router.get('/edit/:id',async function(req,res,next){
     const resource = await Resources.findById(req.params.id);
-    res.render('resources/edit',{resource:resource});
+    res.render('resources/edit',{resource:resource,
+        csrfToken: req.csrfToken()});
 })
 
 function SaveAndRedirect(path1,path){
@@ -46,7 +49,8 @@ function SaveAndRedirect(path1,path){
         res.redirect(path1);
     } catch(err){
         console.log(err);
-        res.render('${path}',{resource:resource});
+        res.render(`${path}`,{resource:resource,
+            csrfToken: req.csrfToken()});
         }
     }
 }
