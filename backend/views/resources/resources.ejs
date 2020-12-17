@@ -7,9 +7,29 @@
     <title>Resources</title>
     <link rel = "icon" href = "/img/imageedit_5_6041780000.png" 
         type = "image/x-icon">
-</head>
-<body>
-    <div class='container'>
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        
+       
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Home</a>
+                <a class="nav-item nav-link active" href="/admin/projects">Projects</a>
+                <a class="nav-item nav-link active" href="/team">Team </a>
+                <a class="nav-item nav-link active" href="/alum">Alumni</a>
+                <a class="nav-item nav-link active" href="/resources">Resources</a>
+                <a class="nav-item nav-link active" href="/events">Events</a>
+                <a class="nav-item nav-link active" href="/achievements">Achievements</a>
+              </div>
+            </div>
+          </nav>
+            <main>
         <h1 class="mb-4">Resources Database</h1>
         <a href='/' class="btn btn-primary">Back to main database</a>
         <a href='resources/add' class="btn btn-success">Add Resource</a>
@@ -20,6 +40,7 @@
                 <%= member.youtube_link %><br>
                 <%= member.id %>
             </div>
+            <br>
             <form action='/resources/<%= member.id %>?_method=DELETE' method="POST">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <button type="submit" class="btn btn-danger">DELETE</button>
@@ -27,6 +48,6 @@
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <a href='resources/edit/<%= member.id %>' class="btn btn-primary">EDIT</a>
         <% }) %>
-    </div>
+        </main>
 </body>
 </html>

@@ -17,6 +17,7 @@ exports.postAddProject = (req, res, next) => {
 
   //fetching data fields from request
   const title = req.body.title;
+  const type = req.body.type;
   const imageUrl = req.body.imageUrl;
   const longDescription = req.body.longDescription;
   const description = req.body.description;
@@ -24,6 +25,7 @@ exports.postAddProject = (req, res, next) => {
   //Here, we map different values we defined in our schema.
   const project = new Project({
     title: title,    //key defined in schema : keys we received through req.
+    type: type, 
     imageUrl: imageUrl, 
     description: description,
     longDescription: longDescription, 
@@ -76,6 +78,7 @@ exports.getEditProject = (req, res, next) => {
 exports.postEditProject = (req, res, next) => {
   const prodId = req.body.productId;
   const updatedTitle = req.body.title;
+  const updatedType = req.body.type;
   const updatedLongDescription = req.body.longDescription;
   const updatedImageUrl = req.body.imageUrl;
   const updatedDesc = req.body.description;
@@ -85,6 +88,7 @@ exports.postEditProject = (req, res, next) => {
     .then(project => {
       
       project.title = updatedTitle;
+      project.type = updatedType;
        project.imageUrl = updatedImageUrl;
        project.description = updatedDesc;
        project.longDescription = updatedLongDescription;
