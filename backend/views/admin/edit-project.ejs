@@ -13,7 +13,16 @@
                 <input type="text" name="title" id="title" value="<% if (editing) { %><%= project.title %><% } %>">
             </div>
             <div class="form-control">
-                <label for="title">Type</label>
+                <label for="type">Type</label>
+                <select>
+                    <option >aerial</option>
+                    <option >swarm</option>
+                    <option >aerobatics</option>
+                    <option >sae</option>
+                  </select>
+                  <br>
+                  <p class="warning">* Write exactly same as in dropdown menu</p>
+                  
                 <input type="text" name="type" id="type" value="<% if (editing) { %><%= project.type %><% } %>">
             </div>
 
