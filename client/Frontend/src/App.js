@@ -8,6 +8,7 @@ import Projects from './components/pages/Projects';
 import Alumni from './components/pages/Alumni';
 import Events from './components/pages/Events';
 import Resources from './components/pages/Resources';
+import ProjectDetails from './components/pages/Project-detail';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/alumni' component={Alumni} />
           <Route path='/events' component={Events} />
           <Route path='/resources' component={Resources} />
+          <Route path='/:productid' component={ProjectDetails} />
 
         </Switch>
       </Router>

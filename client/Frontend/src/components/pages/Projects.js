@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom'
 import '../../App.css';
 
 export default function Projects() {
@@ -34,9 +35,11 @@ export default function Projects() {
         
         <img src={project.imageUrl} alt="" srcset=""/>
         <h2>{project.description}</h2>
-        <div dangerouslySetInnerHTML={{__html:project.sanitizedHtml}}>
+        {/* <div dangerouslySetInnerHTML={{__html:project.sanitizedHtml}}> */}
+
+          <Link to={'/'+project._id}><button>Details</button></Link>
           
-        </div>
+        {/* </div> */}
       </div>
       ))}
     </div>

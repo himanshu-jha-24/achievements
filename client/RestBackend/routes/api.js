@@ -15,7 +15,7 @@ router.get('/projects', (req, res) => {
 
     project.find()
         .then((data) => {
-            console.log('Data: ', data);
+            // console.log('Data: ', data);
             res.json(data);
         })
         .catch((error) => {
@@ -82,6 +82,23 @@ router.get('/achievements', (req, res) => {
             console.log('error: ', error);
         });
 });
+
+router.get('/:productid',(req, res) => {
+  
+    // const prodId = req.params.productid;
+    // console.log(prodId);
+    // console.log(req.params.id);
+  
+    
+    project.findById(req.params.productid)
+    .then((data) => {
+        console.log('Data: ', data);
+        res.json(data);
+    })
+    .catch((error) => {
+        console.log('error: ', error);
+    });
+  });
 
 
 

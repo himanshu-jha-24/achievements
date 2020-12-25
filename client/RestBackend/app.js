@@ -41,6 +41,7 @@ app.get('/alumni', routes);
 app.get('/events', routes);
 app.get('/resources', routes);
 app.get('/achievements', routes);
+app.get('/:productid', routes);
 
 
 
