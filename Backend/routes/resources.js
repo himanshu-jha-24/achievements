@@ -41,7 +41,8 @@ router.get('/edit/:id',async function(req,res,next){
 function SaveAndRedirect(path1,path){
     return async function(req,res,next){
     let resource = req.resource
-    resource.name = req.body.name
+    resource.name = req.body.name,
+    resource.type = req.body.type,
     resource.drive_link = req.body.drive_link
     resource.youtube_link = req.body.youtube_link
     try{

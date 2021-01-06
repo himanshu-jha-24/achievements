@@ -7,9 +7,12 @@ export default function Resources() {
   const [resources, setResources] = useState([{
     
     name: '', 
+    type: '',
     drive_link: '',
     youtube_link: ''
     
+
+    // type- aerial,swarm,sae,aerobatics,general,blog
 
 
   }])
@@ -22,6 +25,17 @@ export default function Resources() {
       }
     }).then(jsonRes => setResources(jsonRes))
   })
+
+
+  //On clicking Resources(navbar) we should get a dropdown menu with options as-
+  // Swarm Robotics
+  // Aerial Robotics
+  // SAE Aero
+  // Aerobatics
+  // General
+  // Blogs
+
+  //On clicking any of these we need to render(after filtering according to type data) resources page.
 
   return (
     <div className="container">
