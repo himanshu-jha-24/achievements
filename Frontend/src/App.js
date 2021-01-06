@@ -23,7 +23,7 @@ function App() {
           <Route path='/alumni' component={Alumni} />
           <Route path='/events' component={Events} />
           <Route path='/resources' component={Resources} />
-          <Route path='/:productid' component={ProjectDetails} />
+          {/* <Route path='/:productid' component={ProjectDetails} /> */}
 
         </Switch>
       </Router>
