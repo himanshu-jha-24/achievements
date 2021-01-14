@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Short+Stack&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css?family=BioRhyme');
+@import url('//db.onlinewebfonts.com/c/aef726001a07788d4c639a835fa10360?family=FF+Tisa');
 * {
   box-sizing: border-box;
    scroll-behavior: smooth;
@@ -23,6 +23,10 @@ h1{
 
   text-decoration: underline;
   text-transform: uppercase;
+}
+.title1{ 
+
+  text-decoration: underline;
 }
 h2{
   padding: 10px;

@@ -62,7 +62,7 @@ b.reverse();
               <h1 className="title"> About Us </h1>
             </div>
             <div className=' col col-12'>
-                <p >For most people, the sky is the limit. For us, the sky is our home.”
+                <p style={{fontFamily:"FF Tisa"}}>For most people, the sky is the limit. For us, the sky is our home.”
       The Aero-modelling Club at IIT BHU, Varanasi since its inception has expanded exponentially with the introduction of innovative technologies, be it the IC engine planes, the autonomous drones or other awesome flying models. We fabricate, fix, and fly to satiate our passion. Our phenomenal stunts will readily capture your attention towards our hobby of aeromodelling - to fabricate a splendid flying machine of your own and soar high in the sky.</p>
       
             </div>
@@ -74,7 +74,7 @@ b.reverse();
           </div>
           <div className="col col-5 col-s-12 ">
             <div className='col'>
-               <h1>Upcoming Events</h1>
+               <h1 className="title1">Upcoming Events</h1>
 
                <div className="event">
                  {a.filter(event => (event.year == yr && event.month >= mnth && event.date >= dt) ).map(event => (
@@ -106,7 +106,7 @@ b.reverse();
           </div>
           <div className="col col-5 col-s-12 ">
             <div className='col'>
-               <h1>Past Events</h1>
+               <h1 className="title1">Past Events</h1>
 
                <div className="event">
                  {b.filter(event => (event.year <= yr && event.month <= mnth && event.date < dt ) ).map(event => (
