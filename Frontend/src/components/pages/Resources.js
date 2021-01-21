@@ -27,7 +27,7 @@ export default function Resources() {
         return res.json()
       }
     }).then(jsonRes => setResources(jsonRes))
-  })
+  },[])
   
   useEffect(()=>{
     Aos.init({duration:1500});

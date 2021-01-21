@@ -28,7 +28,7 @@ let yr = newDate.getFullYear();
       }
     }).then((jsonRes) => {
       setEvents(jsonRes)})
-  })
+  },[])
 
 // events.filter(event => event.year == yr );
     
