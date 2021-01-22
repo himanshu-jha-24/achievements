@@ -73,7 +73,7 @@ export default function Teams() {
               </div>
               <div className="info">
                   <h1 className="membName">{team.name}</h1>
-                  {/* <span className='position'>{team.por}</span> */}
+                  <span className='position'>{team.profession}</span>
                   <p className="description">{team.department}, {team.year}</p>
               </div>
               <div className='team-social-icons'>
