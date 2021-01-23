@@ -31,7 +31,7 @@ export default function Teams() {
         return res.json()
       }
     }).then(jsonRes => setTeams(jsonRes))
-  })
+  },[])
 
   useEffect(()=>{
     Aos.init({duration:2000});
@@ -46,7 +46,9 @@ export default function Teams() {
     }
   }
 
-
+  let a = teams.sort(function (a, b) {
+  return  a.por-b.por||a.year-b.year;
+});
 
   return (
     <>
@@ -63,7 +65,7 @@ export default function Teams() {
        <figcaption>—Eddie Rickenbacker</figcaption>
       </figure>
       <div className="team-wrapper">
-        {teams.map(team => (
+        {a.map(team => (
           <div className="team-container" data-aos='flip-left' data-aos-duration='2000' data-aos-easing='ease-out-cubic'>
               <div className="images">
                 <div className='banner-img'></div>
@@ -71,8 +73,8 @@ export default function Teams() {
               </div>
               <div className="info">
                   <h1 className="membName">{team.name}</h1>
-                  <span className='position'>{team.por}</span>
-                  <p className="description">{team.department}'{team.year}</p>
+                  <span className='position'>{team.profession}</span>
+                  <p className="description">{team.department}, {team.year}</p>
               </div>
               <div className='team-social-icons'>
                 <ul>

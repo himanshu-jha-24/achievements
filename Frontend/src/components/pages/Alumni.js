@@ -30,7 +30,7 @@ export default function Alumni() {
         return res.json()
       }
     }).then(jsonRes => setAlumni(jsonRes))
-  })
+  },[])
 
   useEffect(()=>{
     Aos.init({duration:2000});
