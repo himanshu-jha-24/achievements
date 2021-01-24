@@ -9,9 +9,11 @@ import Alumni from './components/pages/Alumni';
 import Events from './components/pages/Events';
 import Resources from './components/pages/Resources';
 import ProjectDetails from './components/pages/Project-detail';
+import Footer from './components/Footer'
 
 
 function App() {
+
   return (
     <>
       <Router>
@@ -26,6 +28,8 @@ function App() {
           {/* <Route path='/:productid' component={ProjectDetails} /> */}
 
         </Switch>
+        <Footer />
+
       </Router>
     </>
   );

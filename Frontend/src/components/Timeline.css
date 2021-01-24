@@ -1,0 +1,17 @@
+.achievement{
+    background: #b6bcbf;
+    color: black;
+}
+
+.events{
+    margin-top: 5%;
+    background: steelblue;
+}
+
+.vertical-timeline-element-title{
+    font-family: quicksand;
+}
+
+.vertical-timeline-element-subtitle{
+    font-family: quicksand;
+}
